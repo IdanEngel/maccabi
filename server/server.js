@@ -9,7 +9,6 @@ let idHelper;
 
 const app = express();
 
-// init middleware
 app.use(express.json({ extended: false }));
 
 app.get("/users", (req, res) => {
@@ -61,15 +60,6 @@ app.post(
     }
   }
 );
-// Define routes
-// app.use("/api/users", require("./routes/api/users"), (req,res, next) => {
-//     res.header("Access-Control-Allow-Origin", "*");
-//     next()
-// });
-// app.use("/auth", require("./routes/auth"));
-// app.use("/api/profile", require("./routes/api/profile"));
-// app.use("/api/posts", require("./routes/api/posts"));
-
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`server started on port ${port}`));

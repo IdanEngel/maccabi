@@ -1,10 +1,6 @@
-/* eslint-disable react/no-typos */
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import axios from "axios";
-// import { Link, Redirect } from "react-router-dom";
-// import { setAlert } from "../../actions/alert";
-// import { register } from "../../actions/auth";
 
 const Register = ({ setAlert, register, isAuthenticated }) => {
   const [formData, setFormData] = useState({
@@ -35,26 +31,20 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
       const body = JSON.stringify(newUser);
       console.log("body: ", body);
       const res = await axios.post("http://localhost:5000/users", body, config);
-      setFormData( {
+      setFormData({
         name: "",
         email: "",
         age: "",
-      })
-      alert("The User Has Been Added!")
+      });
+      alert("The User Has Been Added!");
       console.log("data: ", res.data);
     } catch (err) {
       const errors = err.response.data.errors;
       if (errors) {
         errors.forEach((error) => alert(error.msg));
       }
-      // console.error(err.data);
     }
-    // register({ name, email, age });
   };
-
-  // if (isAuthenticated) {
-  //   return <Redirect to="/dashboard" />;
-  // }
 
   return (
     <div>
@@ -71,7 +61,6 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
               name="name"
               value={name}
               onChange={(e) => onChange(e)}
-              //   required
             />
           </div>
           <div className="form-group">
