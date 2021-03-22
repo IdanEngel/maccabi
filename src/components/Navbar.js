@@ -18,7 +18,6 @@ const Navbar = () => {
         </Link>
       </h1>
       <> {guestLinks}</>
-      {/* {!loading && (<>{isAuthenticated ? authLinks : guestLinks}</>)} */}
     </nav>
   );
 };
